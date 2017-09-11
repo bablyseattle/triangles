@@ -5,10 +5,12 @@ class Triangle
     @side3 = side3
   end
   def triangle?
-    if ((@side2 + @side1 >= @side3) && (@side3 + @side1 >= @side2) && (@side2 + @side3 >= @side1))
-      return "This is a triangle"
-    else
-      return "This is not a triangle"
+    @side1 = @side1.to_i
+    @side2 = @side2.to_i
+    @side3 = @side3.to_i
+    if(@side1 + @side2 >= @side3 ) && (@side3 + @side2 >= @side1 ) && (@side3 + @side1 >= @side2 )
+    return true
+    else return false
     end
   end
   def triangle_type
@@ -17,7 +19,7 @@ class Triangle
     elsif (@side1 == @side2 || @side2 == @side3 || @side1 == @side3)
       return "This is an isoceles triangle"
     else
-      return ("This is a scalene triangle")
+      return "This is a scalene triangle"
     end
   end
 end
